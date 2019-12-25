@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gouzhong1223.springbootweixinmp.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    <!--@Table message-->
+    <id column="msgid" jdbcType="INTEGER" property="MsgId" />
+    <result column="content" jdbcType="VARCHAR" property="Content" />
+    <result column="msgtype" jdbcType="VARCHAR" property="MsgType" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="CreateTime" />
+    <result column="fromUserName" jdbcType="VARCHAR" property="FromUserName" />
+    <result column="toUserName" jdbcType="VARCHAR" property="ToUserName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    msgid, content, msgtype, createTime, fromUserName, toUserName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where msgid = #{MsgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from message
+    where msgid = #{MsgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    insert into message (msgid, content, msgtype, 
+      createTime, fromUserName, toUserName
+      )
+    values (#{MsgId,jdbcType=INTEGER}, #{Content,jdbcType=VARCHAR}, #{MsgType,jdbcType=VARCHAR}, 
+      #{CreateTime,jdbcType=TIMESTAMP}, #{FromUserName,jdbcType=VARCHAR}, #{ToUserName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="MsgId != null">
+        msgid,
+      </if>
+      <if test="Content != null and Content != ''">
+        content,
+      </if>
+      <if test="MsgType != null and MsgType != ''">
+        msgtype,
+      </if>
+      <if test="CreateTime != null">
+        createTime,
+      </if>
+      <if test="FromUserName != null and FromUserName != ''">
+        fromUserName,
+      </if>
+      <if test="ToUserName != null and ToUserName != ''">
+        toUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="MsgId != null">
+        #{MsgId,jdbcType=INTEGER},
+      </if>
+      <if test="Content != null and Content != ''">
+        #{Content,jdbcType=VARCHAR},
+      </if>
+      <if test="MsgType != null and MsgType != ''">
+        #{MsgType,jdbcType=VARCHAR},
+      </if>
+      <if test="CreateTime != null">
+        #{CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="FromUserName != null and FromUserName != ''">
+        #{FromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="ToUserName != null and ToUserName != ''">
+        #{ToUserName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    update message
+    <set>
+      <if test="Content != null and Content != ''">
+        content = #{Content,jdbcType=VARCHAR},
+      </if>
+      <if test="MsgType != null and MsgType != ''">
+        msgtype = #{MsgType,jdbcType=VARCHAR},
+      </if>
+      <if test="CreateTime != null">
+        createTime = #{CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="FromUserName != null and FromUserName != ''">
+        fromUserName = #{FromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="ToUserName != null and ToUserName != ''">
+        toUserName = #{ToUserName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where msgid = #{MsgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    update message
+    set content = #{Content,jdbcType=VARCHAR},
+      msgtype = #{MsgType,jdbcType=VARCHAR},
+      createTime = #{CreateTime,jdbcType=TIMESTAMP},
+      fromUserName = #{FromUserName,jdbcType=VARCHAR},
+      toUserName = #{ToUserName,jdbcType=VARCHAR}
+    where msgid = #{MsgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update message
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.Content,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="msgtype = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.MsgType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="createTime = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.CreateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="fromUserName = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.FromUserName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="toUserName = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.ToUserName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where msgid in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.MsgId,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update message
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="content = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.Content != null">
+            when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.Content,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="msgtype = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.MsgType != null">
+            when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.MsgType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="createTime = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.CreateTime != null">
+            when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.CreateTime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fromUserName = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.FromUserName != null">
+            when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.FromUserName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="toUserName = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.ToUserName != null">
+            when msgid = #{item.MsgId,jdbcType=INTEGER} then #{item.ToUserName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where msgid in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.MsgId,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into message
+    (msgid, content, msgtype, createTime, fromUserName, toUserName)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.MsgId,jdbcType=INTEGER}, #{item.Content,jdbcType=VARCHAR}, #{item.MsgType,jdbcType=VARCHAR}, 
+        #{item.CreateTime,jdbcType=TIMESTAMP}, #{item.FromUserName,jdbcType=VARCHAR}, #{item.ToUserName,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    insert into message
+    (msgid, content, msgtype, createTime, fromUserName, toUserName)
+    values
+    (#{MsgId,jdbcType=INTEGER}, #{Content,jdbcType=VARCHAR}, #{MsgType,jdbcType=VARCHAR}, 
+      #{CreateTime,jdbcType=TIMESTAMP}, #{FromUserName,jdbcType=VARCHAR}, #{ToUserName,jdbcType=VARCHAR}
+      )
+    on duplicate key update 
+    msgid = #{MsgId,jdbcType=INTEGER}, 
+    content = #{Content,jdbcType=VARCHAR}, 
+    msgtype = #{MsgType,jdbcType=VARCHAR}, 
+    createTime = #{CreateTime,jdbcType=TIMESTAMP}, 
+    fromUserName = #{FromUserName,jdbcType=VARCHAR}, 
+    toUserName = #{ToUserName,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
+    <!--@mbg.generated-->
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="MsgId != null">
+        msgid,
+      </if>
+      <if test="Content != null">
+        content,
+      </if>
+      <if test="MsgType != null">
+        msgtype,
+      </if>
+      <if test="CreateTime != null">
+        createTime,
+      </if>
+      <if test="FromUserName != null">
+        fromUserName,
+      </if>
+      <if test="ToUserName != null">
+        toUserName,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="MsgId != null">
+        #{MsgId,jdbcType=INTEGER},
+      </if>
+      <if test="Content != null">
+        #{Content,jdbcType=VARCHAR},
+      </if>
+      <if test="MsgType != null">
+        #{MsgType,jdbcType=VARCHAR},
+      </if>
+      <if test="CreateTime != null">
+        #{CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="FromUserName != null">
+        #{FromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="ToUserName != null">
+        #{ToUserName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="MsgId != null">
+        msgid = #{MsgId,jdbcType=INTEGER},
+      </if>
+      <if test="Content != null">
+        content = #{Content,jdbcType=VARCHAR},
+      </if>
+      <if test="MsgType != null">
+        msgtype = #{MsgType,jdbcType=VARCHAR},
+      </if>
+      <if test="CreateTime != null">
+        createTime = #{CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="FromUserName != null">
+        fromUserName = #{FromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="ToUserName != null">
+        toUserName = #{ToUserName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
