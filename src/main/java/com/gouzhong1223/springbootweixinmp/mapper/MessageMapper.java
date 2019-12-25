@@ -1,7 +1,8 @@
 package com.gouzhong1223.springbootweixinmp.mapper;
 
-import com.gouzhong1223.springbootweixinmp.pojo.Message;
+import com.gouzhong1223.springbootweixinmp.pojo.Xml;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -16,23 +17,23 @@ import org.apache.ibatis.annotations.Param;
 public interface MessageMapper {
     int deleteByPrimaryKey(Integer MsgId);
 
-    int insert(Message record);
+    int insert(Xml record);
 
-    int insertOrUpdate(Message record);
+    int insertOrUpdate(Xml record);
 
-    int insertOrUpdateSelective(Message record);
+    int insertOrUpdateSelective(Xml record);
 
-    int insertSelective(Message record);
+    int insertSelective(Xml record);
 
-    Message selectByPrimaryKey(Integer MsgId);
+    Xml selectByPrimaryKey(Integer MsgId);
 
-    int updateByPrimaryKeySelective(Message record);
+    int updateByPrimaryKeySelective(Xml record);
 
-    int updateByPrimaryKey(Message record);
+    int updateByPrimaryKey(Xml record);
 
-    int updateBatch(List<Message> list);
+    int updateBatch(List<Xml> list);
 
-    int updateBatchSelective(List<Message> list);
+    int updateBatchSelective(List<Xml> list);
 
-    int batchInsert(@Param("list") List<Message> list);
+    int batchInsert(@Param("list") List<Xml> list);
 }
