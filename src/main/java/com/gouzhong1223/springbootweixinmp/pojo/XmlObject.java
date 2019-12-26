@@ -13,5 +13,5 @@ import lombok.Data;
  */
 @Data
 public class XmlObject {
-    private Xml xml;
+    private Message xml;
 }

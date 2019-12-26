@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * @Author : Gouzhong
  * @Blog : www.gouzhong1223.com
- * @Description : TODO
+ * @Description : MyBatis配置类
  * @Date : create by QingSong in 2019-12-25 9:46 下午
  * @Email : 1162864960@qq.com
  * @Since : JDK 1.8

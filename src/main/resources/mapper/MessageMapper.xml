@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?message version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gouzhong1223.springbootweixinmp.mapper.MessageMapper">
-  <resultMap id="BaseResultMap" type="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <resultMap id="BaseResultMap" type="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    <!--@Table xml-->
+    <!--@Table message-->
     <id column="msgid" jdbcType="INTEGER" property="MsgId" />
     <result column="content" jdbcType="VARCHAR" property="Content" />
     <result column="msgtype" jdbcType="VARCHAR" property="MsgType" />
@@ -19,26 +19,26 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from xml
+    from message
     where msgid = #{MsgId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
-    delete from xml
+    delete from message
     where msgid = #{MsgId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <insert id="insert" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    insert into xml (msgid, content, msgtype,
+    insert into message (msgid, content, msgtype,
       createTime, fromUserName, toUserName
       )
     values (#{MsgId,jdbcType=INTEGER}, #{Content,jdbcType=VARCHAR}, #{MsgType,jdbcType=VARCHAR}, 
       #{CreateTime,jdbcType=TIMESTAMP}, #{FromUserName,jdbcType=VARCHAR}, #{ToUserName,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <insert id="insertSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    insert into xml
+    insert into message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="MsgId != null">
         msgid,
@@ -80,9 +80,9 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    update xml
+    update message
     <set>
       <if test="Content != null and Content != ''">
         content = #{Content,jdbcType=VARCHAR},
@@ -102,9 +102,9 @@
     </set>
     where msgid = #{MsgId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <update id="updateByPrimaryKey" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    update xml
+    update message
     set content = #{Content,jdbcType=VARCHAR},
       msgtype = #{MsgType,jdbcType=VARCHAR},
       createTime = #{CreateTime,jdbcType=TIMESTAMP},
@@ -114,7 +114,7 @@
   </update>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update xml
+    update message
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="content = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
@@ -149,7 +149,7 @@
   </update>
   <update id="updateBatchSelective" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update xml
+    update message
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="content = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
@@ -194,7 +194,7 @@
   </update>
   <insert id="batchInsert" parameterType="map">
     <!--@mbg.generated-->
-    insert into xml
+    insert into message
     (msgid, content, msgtype, createTime, fromUserName, toUserName)
     values
     <foreach collection="list" item="item" separator=",">
@@ -203,9 +203,9 @@
         )
     </foreach>
   </insert>
-  <insert id="insertOrUpdate" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <insert id="insertOrUpdate" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    insert into xml
+    insert into message
     (msgid, content, msgtype, createTime, fromUserName, toUserName)
     values
     (#{MsgId,jdbcType=INTEGER}, #{Content,jdbcType=VARCHAR}, #{MsgType,jdbcType=VARCHAR}, 
@@ -219,9 +219,9 @@
     fromUserName = #{FromUserName,jdbcType=VARCHAR}, 
     toUserName = #{ToUserName,jdbcType=VARCHAR}
   </insert>
-  <insert id="insertOrUpdateSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Xml">
+  <insert id="insertOrUpdateSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.Message">
     <!--@mbg.generated-->
-    insert into xml
+    insert into message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="MsgId != null">
         msgid,

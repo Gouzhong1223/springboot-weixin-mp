@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.*;
 @NoArgsConstructor
 @XmlRootElement(name = "xml")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Xml implements Serializable {
+public class Message implements Serializable {
 
 
     /**
