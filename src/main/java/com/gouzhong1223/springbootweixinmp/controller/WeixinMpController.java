@@ -1,6 +1,7 @@
 package com.gouzhong1223.springbootweixinmp.controller;
 
 import com.gouzhong1223.springbootweixinmp.service.ReturnMessageService;
+import com.gouzhong1223.springbootweixinmp.service.UserService;
 import com.gouzhong1223.springbootweixinmp.util.CheckStringUrlUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

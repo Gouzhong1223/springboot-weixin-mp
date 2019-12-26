@@ -39,4 +39,7 @@ public interface UserMapper {
     int updateBatchSelective(List<User> list);
 
     int batchInsert(@Param("list") List<User> list);
+
+    User selectOneByUserToken(@Param("userToken")String userToken);
+
 }
