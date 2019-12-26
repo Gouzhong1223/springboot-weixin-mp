@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="130e597e-0340-4c0a-a643-20130cd3a478" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/weixinmp.log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/weixinmp.log/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/config/MyBatisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/config/MyBatisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/controller/WeixinMpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/controller/WeixinMpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/mapper/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/mapper/MessageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/pojo/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/pojo/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/pojo/XmlObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/pojo/XmlObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/service/impl/ReturnMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gouzhong1223/springbootweixinmp/service/impl/ReturnMessageServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +65,28 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringbootWeixinMpApplication">
+    <configuration name="com.gouzhong1223.springbootweixinmp.util in springboot-weixin-mp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-weixin-mp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gouzhong1223.springbootweixinmp.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gouzhong1223.springbootweixinmp.util" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringbootWeixinMpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="springboot-weixin-mp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.gouzhong1223.springbootweixinmp.SpringbootWeixinMpApplication" />
@@ -87,6 +94,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.gouzhong1223.springbootweixinmp.util in springboot-weixin-mp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -114,7 +126,7 @@
       <workItem from="1577281379734" duration="1451000" />
       <workItem from="1577283587265" duration="9518000" />
       <workItem from="1577334710701" duration="558000" />
-      <workItem from="1577343573915" duration="407000" />
+      <workItem from="1577343573915" duration="1668000" />
     </task>
     <task id="LOCAL-00001" summary="新建工程">
       <created>1577249257863</created>
@@ -151,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577296707957</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="uodate-&gt;完善代码">
+      <created>1577344004371</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1577344004372</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +182,8 @@
     <MESSAGE value="create -&gt;新增配置文件信息" />
     <MESSAGE value="create -&gt;新增sha1加密工具类&#10;完善微信url验证&#10;新增message实体类&#10;新增message操作mapper&#10;将配置问价分片为开发环境和测试环境" />
     <MESSAGE value="uodate-&gt;完善消息收发" />
-    <option name="LAST_COMMIT_MESSAGE" value="uodate-&gt;完善消息收发" />
+    <MESSAGE value="uodate-&gt;完善代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="uodate-&gt;完善代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="127" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577254071828">
@@ -179,51 +199,51 @@
     </state>
     <state x="960" y="0" width="480" height="900" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1577295319132" />
     <state x="624" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877@0.23.1440.877" timestamp="1577343926987" />
-    <state x="194" y="33" key="CommitChangelistDialog2" timestamp="1577296707697">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="194" y="64" key="CommitChangelistDialog2" timestamp="1577344003953">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="194" y="33" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577296707697" />
-    <state x="194" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1577254667056" />
-    <state width="1398" height="271" key="GridCell.Tab.0.bottom" timestamp="1577335973753">
+    <state x="194" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1577344003953" />
+    <state width="1398" height="277" key="GridCell.Tab.0.bottom" timestamp="1577345848148">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577296655788" />
-    <state width="1398" height="271" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577335973753" />
-    <state width="1398" height="271" key="GridCell.Tab.0.center" timestamp="1577335973752">
+    <state width="1398" height="277" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577345848148" />
+    <state width="1398" height="277" key="GridCell.Tab.0.center" timestamp="1577345848147">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1577296655786" />
-    <state width="1398" height="271" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1577335973752" />
-    <state width="1398" height="271" key="GridCell.Tab.0.left" timestamp="1577335973751">
+    <state width="1398" height="277" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1577345848147" />
+    <state width="1398" height="277" key="GridCell.Tab.0.left" timestamp="1577345848147">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1577296655785" />
-    <state width="1398" height="271" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1577335973751" />
-    <state width="1398" height="271" key="GridCell.Tab.0.right" timestamp="1577335973752">
+    <state width="1398" height="277" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1577345848147" />
+    <state width="1398" height="277" key="GridCell.Tab.0.right" timestamp="1577345848148">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1577296655787" />
-    <state width="1398" height="271" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1577335973752" />
-    <state width="1398" height="271" key="GridCell.Tab.1.bottom" timestamp="1577335973754">
+    <state width="1398" height="277" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1577345848148" />
+    <state width="1398" height="277" key="GridCell.Tab.1.bottom" timestamp="1577345847737">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577296655791" />
-    <state width="1398" height="271" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577335973754" />
-    <state width="1398" height="271" key="GridCell.Tab.1.center" timestamp="1577335973753">
+    <state width="1398" height="277" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1577345847737" />
+    <state width="1398" height="277" key="GridCell.Tab.1.center" timestamp="1577345847736">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1577296655790" />
-    <state width="1398" height="271" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1577335973753" />
-    <state width="1398" height="271" key="GridCell.Tab.1.left" timestamp="1577335973753">
+    <state width="1398" height="277" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1577345847736" />
+    <state width="1398" height="277" key="GridCell.Tab.1.left" timestamp="1577345847736">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1577296655789" />
-    <state width="1398" height="271" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1577335973753" />
-    <state width="1398" height="271" key="GridCell.Tab.1.right" timestamp="1577335973753">
+    <state width="1398" height="277" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1577345847736" />
+    <state width="1398" height="277" key="GridCell.Tab.1.right" timestamp="1577345847737">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="289" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1577296655791" />
-    <state width="1398" height="271" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1577335973753" />
+    <state width="1398" height="277" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1577345847737" />
     <state width="1398" height="271" key="GridCell.Tab.2.bottom" timestamp="1577335973755">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -244,16 +264,16 @@
     </state>
     <state width="1398" height="289" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1577296655793" />
     <state width="1398" height="271" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1577335973754" />
-    <state x="221" y="63" key="SettingsEditor" timestamp="1577252158752">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="221" y="100" key="SettingsEditor" timestamp="1577345792873">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1577252158752" />
-    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1577249068907" />
-    <state x="320" y="171" key="Vcs.Push.Dialog.v2" timestamp="1577296711089">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1577345792873" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1577344008041">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="171" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1577296711089" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1577254669624" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1577344008041" />
     <state x="503" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577252779695">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

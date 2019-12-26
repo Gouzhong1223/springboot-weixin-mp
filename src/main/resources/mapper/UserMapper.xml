@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gouzhong1223.springbootweixinmp.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    <!--@Table user-->
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="user_token" jdbcType="VARCHAR" property="userToken" />
+    <result column="user_createtime" jdbcType="TIMESTAMP" property="userCreatetime" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    userid, user_token, user_createtime, username, `password`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from user
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    insert into user (userid, user_token, user_createtime, 
+      username, `password`)
+    values (#{userid,jdbcType=INTEGER}, #{userToken,jdbcType=VARCHAR}, #{userCreatetime,jdbcType=TIMESTAMP}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userToken != null and userToken != ''">
+        user_token,
+      </if>
+      <if test="userCreatetime != null">
+        user_createtime,
+      </if>
+      <if test="username != null and username != ''">
+        username,
+      </if>
+      <if test="password != null and password != ''">
+        `password`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="userToken != null and userToken != ''">
+        #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userCreatetime != null">
+        #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="username != null and username != ''">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null and password != ''">
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    update user
+    <set>
+      <if test="userToken != null and userToken != ''">
+        user_token = #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userCreatetime != null">
+        user_createtime = #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="username != null and username != ''">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null and password != ''">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    update user
+    set user_token = #{userToken,jdbcType=VARCHAR},
+      user_createtime = #{userCreatetime,jdbcType=TIMESTAMP},
+      username = #{username,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update user
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_token = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when userid = #{item.userid,jdbcType=INTEGER} then #{item.userToken,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="user_createtime = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when userid = #{item.userid,jdbcType=INTEGER} then #{item.userCreatetime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when userid = #{item.userid,jdbcType=INTEGER} then #{item.username,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="`password` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when userid = #{item.userid,jdbcType=INTEGER} then #{item.password,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where userid in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.userid,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update user
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_token = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userToken != null">
+            when userid = #{item.userid,jdbcType=INTEGER} then #{item.userToken,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_createtime = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userCreatetime != null">
+            when userid = #{item.userid,jdbcType=INTEGER} then #{item.userCreatetime,jdbcType=TIMESTAMP}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.username != null">
+            when userid = #{item.userid,jdbcType=INTEGER} then #{item.username,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="`password` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.password != null">
+            when userid = #{item.userid,jdbcType=INTEGER} then #{item.password,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where userid in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.userid,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into user
+    (userid, user_token, user_createtime, username, `password`)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.userid,jdbcType=INTEGER}, #{item.userToken,jdbcType=VARCHAR}, #{item.userCreatetime,jdbcType=TIMESTAMP}, 
+        #{item.username,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    insert into user
+    (userid, user_token, user_createtime, username, `password`)
+    values
+    (#{userid,jdbcType=INTEGER}, #{userToken,jdbcType=VARCHAR}, #{userCreatetime,jdbcType=TIMESTAMP}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+    on duplicate key update 
+    userid = #{userid,jdbcType=INTEGER}, 
+    user_token = #{userToken,jdbcType=VARCHAR}, 
+    user_createtime = #{userCreatetime,jdbcType=TIMESTAMP}, 
+    username = #{username,jdbcType=VARCHAR}, 
+    `password` = #{password,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="com.gouzhong1223.springbootweixinmp.pojo.User">
+    <!--@mbg.generated-->
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userToken != null">
+        user_token,
+      </if>
+      <if test="userCreatetime != null">
+        user_createtime,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="userToken != null">
+        #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userCreatetime != null">
+        #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="userToken != null">
+        user_token = #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userCreatetime != null">
+        user_createtime = #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
