@@ -1,7 +1,6 @@
 package com.gouzhong1223.springbootweixinmp.controller;
 
 import com.gouzhong1223.springbootweixinmp.service.ReturnMessageService;
-import com.gouzhong1223.springbootweixinmp.service.UserService;
 import com.gouzhong1223.springbootweixinmp.util.CheckStringUrlUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,10 @@ import org.springframework.web.bind.annotation.*;
  * @Blog : www.gouzhong1223.com
  * @Description : 微信请求接口
  * @Date : create by QingSong in 2019-12-25 12:57 下午
- * @Email : 1162864960@qq.com
+ * @Email : gouzhong1223@gmail.com
  * @Since : JDK 1.8
  * @ProjectName : springboot-weixin-mp
+ * @Version : 1.0.0
  */
 @Controller
 @RequestMapping(value = "api")

@@ -11,6 +11,8 @@ import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 /**
  * @Author : Gouzhong
  * @Blog : www.gouzhong1223.com
@@ -32,15 +34,17 @@ public class ReturnMessageServiceImpl implements ReturnMessageService {
         com.alibaba.fastjson.JSONObject newjsonobject = com.alibaba.fastjson.JSONObject.parseObject(jsonObject.toString());
         Message message = JSON.toJavaObject(newjsonobject, XmlObject.class).getXml();
         Message returnmessage = new Message();
-        if (userService.checkUser(message.getFromUserName())) {
-            returnmessage.setCreateTime((int) System.currentTimeMillis());
-            returnmessage.setFromUserName(message.getToUserName());
-            returnmessage.setToUserName(message.getFromUserName());
-            returnmessage.setMsgId(1);
-            returnmessage.setMsgType("text");
-            returnmessage.setContent("马战你好，你的token是" + message.getFromUserName());
+        returnmessage.setCreateTime((int) System.currentTimeMillis());
+        returnmessage.setFromUserName(message.getToUserName());
+        returnmessage.setToUserName(message.getFromUserName());
+        returnmessage.setMsgId(1);
+        returnmessage.setMsgType("text");
+        if ("时间".equals(message.getContent())) {
+            LocalDateTime now = LocalDateTime.now();
+            returnmessage.setContent("你好，现在的时间是" + now.toLocalDate());
             return XsteamUtil.convertToXml(returnmessage);
         }
+        returnmessage.setContent("你好，你的token是" + message.getFromUserName());
         return XsteamUtil.convertToXml(returnmessage);
     }
 }
