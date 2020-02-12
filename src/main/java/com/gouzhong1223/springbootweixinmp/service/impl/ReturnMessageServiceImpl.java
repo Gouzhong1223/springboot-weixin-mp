@@ -11,7 +11,9 @@ import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @Author : Gouzhong
@@ -40,11 +42,13 @@ public class ReturnMessageServiceImpl implements ReturnMessageService {
         returnmessage.setMsgId(1);
         returnmessage.setMsgType("text");
         if ("时间".equals(message.getContent())) {
-            LocalDateTime now = LocalDateTime.now();
-            returnmessage.setContent("你好，现在的时间是" + now.toLocalDate());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+            String format = simpleDateFormat.format(new Date());
+            returnmessage.setContent("你好，现在的时间是：" + format);
             return XsteamUtil.convertToXml(returnmessage);
         }
         returnmessage.setContent("你好，你的token是" + message.getFromUserName());
         return XsteamUtil.convertToXml(returnmessage);
     }
+
 }
