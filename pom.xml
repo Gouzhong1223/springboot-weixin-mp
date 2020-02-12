@@ -138,7 +138,7 @@
                     <workdir>/ROOT</workdir>
                     <cmd>["java","-version"]</cmd>
                     <entryPoint>["java","-jar","${project.build.finalName}.jar"]</entryPoint>
-                    <dockerHost>http://139.9.213.199:2375</dockerHost>
+                    <dockerHost>http://x.x.x.x:2375</dockerHost>
                     <resources>
                         <resource>
                             <targetPath>/ROOT</targetPath>
